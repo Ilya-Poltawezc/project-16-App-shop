@@ -1,0 +1,14 @@
+@use '../../styles/helpers/' as *;
+
+.button {
+    font-size: rem(16);
+    color: var(--color-light);
+    background-color: var(--color-primary);
+    padding: rem(22) rem(47);
+    border: none;
+    border-radius: rem(4);
+
+    &:hover {
+        background-color: var(--color-small);
+    }
+}
