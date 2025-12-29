@@ -1,0 +1,67 @@
+@use 'helpers' as *;
+
+body {
+    @include fluid-text(18, 24);
+
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-base);
+    letter-spacing: -0.03em;
+    color: var(--color-greyText);
+    background-color: var(--color-light);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    color: var(--color-light);
+
+    @include hover {
+        color: var(--color-small);
+    }
+
+    &[class] {
+        text-decoration: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-accent);
+    color: var(--color-dark);
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+p {
+    font-family: var(--font-family-base);
+    color: var(--color-greyText);
+    line-height: 1.5;
+}
+
+h1 {
+    @include fluid-text(36, 32);
+}
+
+h2 {
+    @include fluid-text(30, 28);
+}
+
+h3 {
+    @include fluid-text(46, 24);
+}
+
+h4 {
+    @include fluid-text(20, 16);
+}
+
+h5 {
+    @include fluid-text(28, 22);
+}

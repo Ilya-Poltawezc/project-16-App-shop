@@ -1,0 +1,40 @@
+@use '../../styles/helpers/' as *;
+
+.header {
+    padding-block: rem(25);
+    background-color: var(--color-violet);
+
+    &__imgLink {
+        display: flex;
+        align-items: center;
+    }
+
+    &__titleBlock {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: var(--borderGrey);
+        padding-bottom: rem(20);
+    }
+
+    &__title {
+        display: flex;
+        column-gap: rem(40);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        font-size: rem(14);
+    }
+
+    &__linkBac {
+        font-size: rem(14);
+        display: flex;
+        align-items: center;
+        column-gap: rem(10);
+    }
+}

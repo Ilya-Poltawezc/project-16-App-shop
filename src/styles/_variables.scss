@@ -1,0 +1,29 @@
+@use 'helpers' as *;
+
+:root {
+    --color-light: #ffffff;
+    --color-dark: #000000;
+    --color-violet: #484283;
+    --color-primary: #f14f4f;
+    --color-greyText: #444b58;
+    --color-small: #dbbba9;
+    --color-secBg: #fff4ee;
+    --color-grey: #b2b5bb;
+    --color-bg: #f3f6f6;
+
+    --font-family-base: 'Montserrat', sans-serif;
+    --font-family-accent: 'Nunito', sans-serif;
+
+    --borderGrey: #{rem(1)} solid rgba(255, 255, 255, 0.5);
+    --borderSec: #{rem(1)} solid #808080;
+    --borderCheckbox: #{rem(1)} solid var(--color-small);
+    --radius: rem(4);
+
+    --container-width: #{rem(1180)};
+    --container-padding-x: #{rem(16)};
+    --transition-duration: 0.2s;
+
+    @include laptop {
+        --container-width: #{rem(1180)};
+    }
+}
