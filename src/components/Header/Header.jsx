@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import Button from '../Button/Button';
 import BacketIcon from '../IconsComponents/BacketIcon';
 import { headerMenu } from './header.data'
+import ButtonMenuHeader from './ButtonMenuHeader';
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
         <a className={styles.header__imgLink} href="/">
         <img src={logo} alt="SneakMax" />
         </a>
-        <nav>
+        <nav className={styles.header__menu}>
         <ul className={styles.header__title}>
             {headerMenu.map(({ id, label, href }) => (
                 <li key={id} className={styles.header__item}>
@@ -29,6 +30,7 @@ export default function Header() {
             </li>
         </ul>
         </nav>
+        <ButtonMenuHeader />
       </div>
       <div className={clsx('container', styles.header__body)}>
         <div className={styles.header__bodyDiv}>

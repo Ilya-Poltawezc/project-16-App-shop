@@ -15,6 +15,11 @@
         justify-content: space-between;
         border-bottom: var(--borderGrey);
         padding-bottom: rem(20);
+
+        @include tablet {
+            align-items: start;
+            padding-bottom: rem(10);
+        }
     }
 
     &__title {
@@ -45,6 +50,10 @@
         flex-direction: column;
         align-items: start;
         row-gap: rem(20);
+
+        @include mobile {
+            padding-block: rem(20);
+        }
     }
 
     &__bodyTitle {
@@ -54,5 +63,59 @@
     &__descTitle {
         color: var(--color-light);
         font-size: rem(16);
+    }
+
+    &__menu {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__menuButton {
+        display: none;
+
+        @include tablet {
+            padding-block: rem(10);
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            row-gap: rem(4);
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    &__span {
+        width: rem(35);
+        height: rem(3);
+        background-color: var(--color-light);
+        border-radius: rem(4);
+
+        &:nth-child(3) {
+            width: rem(25);
+        }
+    }
+
+    &__titleMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: rem(10);
+        max-height: 0;
+        opacity: 0;
+        transition: 0.3s;
+        pointer-events: none;
+    }
+
+    &__MenuOpen {
+        max-height: rem(210);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &__open {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
     }
 }
