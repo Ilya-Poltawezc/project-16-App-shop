@@ -1,0 +1,93 @@
+@use '../../../styles/helpers/' as *;
+
+.catalog {
+    padding-block: rem(60);
+    display: flex;
+    justify-content: space-between;
+
+    &__title {
+        padding: rem(20);
+        background-color: var(--color-secBg);
+        border-radius: rem(4);
+    }
+
+    &__h2 {
+        font-size: rem(24);
+        font-weight: 400;
+        color: var(--color-greyText);
+    }
+
+    &__block {
+        margin-top: rem(20);
+    }
+
+    &__blockP {
+        font-size: rem(16);
+    }
+
+    &__inputBlock {
+        margin-top: rem(10);
+        display: flex;
+        align-items: center;
+    }
+
+    &__line {
+        background-color: var(--color-grey);
+        height: rem(30);
+        width: rem(1);
+    }
+
+    &__inpt2 {
+        padding-top: rem(17);
+        padding-left: rem(40);
+        max-width: rem(120);
+        background-color: transparent;
+        border: none;
+        border-top: rem(1) solid var(--color-grey);
+        border-right: rem(1) solid var(--color-grey);
+        border-top-right-radius: rem(4);
+        font-family: var(--font-family-base);
+        font-size: rem(16);
+    }
+
+    &__inpt1 {
+        padding-top: rem(17);
+        padding-left: rem(40);
+        max-width: rem(120);
+        background-color: transparent;
+        border: none;
+        border-top: rem(1) solid var(--color-grey);
+        border-left: rem(1) solid var(--color-grey);
+        border-top-left-radius: rem(4);
+        font-family: var(--font-family-base);
+        font-size: rem(16);
+    }
+
+    &__rangeInpt::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: rem(5);
+        height: rem(15);
+        margin-top: rem(-4.5);
+        border: none;
+        border-radius: rem(4);
+        background: var(--color-grey);
+    }
+
+    &__rangeInpt::-webkit-slider-runnable-track {
+        box-sizing: border-box;
+        height: rem(4);
+        border-radius: rem(4);
+        background-color: var(--color-grey);
+    }
+
+    &__rangeBlock {
+        display: flex;
+    }
+
+    &__rangeInpt {
+        -webkit-appearance: none;
+        appearance: none;
+        margin-left: rem(-6);
+    }
+}
