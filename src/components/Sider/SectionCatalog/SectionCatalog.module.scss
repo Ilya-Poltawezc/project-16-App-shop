@@ -6,6 +6,9 @@
     justify-content: space-between;
 
     &__title {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
         padding: rem(20);
         background-color: var(--color-secBg);
         border-radius: rem(4);
@@ -15,10 +18,6 @@
         font-size: rem(24);
         font-weight: 400;
         color: var(--color-greyText);
-    }
-
-    &__block {
-        margin-top: rem(20);
     }
 
     &__blockP {
@@ -89,5 +88,73 @@
         -webkit-appearance: none;
         appearance: none;
         margin-left: rem(-6);
+    }
+
+    &__checkBlock {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(10);
+    }
+
+    &__blockCheck {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__divCheck {
+        display: flex;
+        align-items: center;
+        column-gap: rem(10);
+        flex-direction: row-reverse;
+    }
+
+    &__checkBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        appearance: none;
+        background-color: transparent;
+        width: rem(24);
+        aspect-ratio: 1;
+        border: var(--borderCheckbox);
+        border-radius: rem(4);
+
+        &:not(:checked) {
+                &::after {
+                    @include hide;
+                }
+            }
+
+            &::after {
+                content: '';
+                width: rem(15);
+                height: rem(12);
+                background: url('../../../assets/icons/GroupCheckbox.svg') center/cover no-repeat;
+                transition-duration: var(--transition-duration);
+            }
+    }
+
+    &__sizeBlock {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(10);
+    }
+
+    &__blockGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+    }
+
+    &__button {
+        padding: rem(25);
+        background-color: transparent;
+        font-family: var(--font-family-base);
+        font-size: rem(16);
+        border: var(--borderCheckbox);
+    }
+
+    &__active {
+        background-color: var(--color-small);
     }
 }
