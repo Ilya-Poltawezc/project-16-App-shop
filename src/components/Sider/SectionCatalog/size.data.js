@@ -1,4 +1,6 @@
- export const size = [
+import infoCard from '../../../assets/images/infoCard.png';
+
+export const size = [
     {id: 1, size: 35},
     {id: 2, size: 36},
     {id: 3, size: 37},
@@ -8,4 +10,16 @@
     {id: 7, size: 41},
     {id: 8, size: 42},
     {id: 9, size: 43},
+]
+
+export const content = [
+    {id: 1, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 2, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 3, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 4, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 5, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 6, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 7, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 8, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 9, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
 ]

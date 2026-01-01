@@ -3,6 +3,10 @@ import RangeInput from './RangeInput';
 import styles from './SectionCatalog.module.scss';
 import clsx from 'clsx';
 import SizeCatalog from './SizeCatalog';
+import ButtonApp from '../../Button/ButtonApp';
+import ButtonReset from '../../Button/ButtonReset';
+import ProductInfo from './ProductInfo';
+import ButtonShowDetails from './ButtonShowDetails';
 
 export default function SectionCatalog() {
     return (
@@ -12,8 +16,11 @@ export default function SectionCatalog() {
                 <RangeInput />
                 <CheckBoxInput />
                 <SizeCatalog />
+                <ButtonApp />
+                <ButtonReset />
             </div>
-            <div>adsa</div>
+            <ButtonShowDetails />
+            <ProductInfo />
         </div>
     )
 }

@@ -3,7 +3,12 @@
 .catalog {
     padding-block: rem(60);
     display: flex;
-    justify-content: space-between;
+    align-items: start;
+    column-gap: rem(20);
+
+    @include mobile {
+        column-gap: 0;
+    }
 
     &__title {
         display: flex;
@@ -12,12 +17,25 @@
         padding: rem(20);
         background-color: var(--color-secBg);
         border-radius: rem(4);
+
+        @include mobile {
+            row-gap: rem(10);
+            padding: rem(10);
+            max-width: 0;
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none;
+        }
     }
 
     &__h2 {
         font-size: rem(24);
         font-weight: 400;
         color: var(--color-greyText);
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__blockP {
@@ -37,7 +55,7 @@
     }
 
     &__inpt2 {
-        padding-top: rem(17);
+        padding-top: rem(10);
         padding-left: rem(40);
         max-width: rem(120);
         background-color: transparent;
@@ -50,7 +68,7 @@
     }
 
     &__inpt1 {
-        padding-top: rem(17);
+        padding-top: rem(10);
         padding-left: rem(40);
         max-width: rem(120);
         background-color: transparent;
@@ -120,6 +138,10 @@
         border: var(--borderCheckbox);
         border-radius: rem(4);
 
+        @include mobile {
+            row-gap: rem(5);
+        }
+
         &:not(:checked) {
                 &::after {
                     @include hide;
@@ -152,9 +174,108 @@
         font-family: var(--font-family-base);
         font-size: rem(16);
         border: var(--borderCheckbox);
+
+        @include mobile {
+            padding: rem(16);
+        }
     }
 
     &__active {
         background-color: var(--color-small);
+    }
+
+    &__body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(40);
+        z-index: 1;
+    }
+
+    &__bodyGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: rem(20);
+        column-gap: rem(20);
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__bodyCard {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(10);
+        align-items: start;
+        border-radius: rem(4);
+
+        &:hover {
+            background-color: var(--color-secBg);
+            transform: scale(1.05);
+        }
+    }
+
+    &__bodyPrace {
+        font-size: rem(20);
+        color: var(--color-greyText);
+        font-weight: 600;
+    }
+
+    &__buttonShow {
+        display: none;
+
+        @include mobile {
+            padding-block: rem(60);
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: calc(100% - 60%);
+            right: calc(100% - 0%);
+            height: rem(40);
+            z-index: 2;
+            width: rem(40);
+            border: none;
+        }
+    }
+
+    &__buttonHide {
+        max-width: rem(300);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &__buttonSvg {
+        width: rem(30);
+    }
+
+    &__cardShow {
+        padding-block: rem(60);
+            display: none;
+            align-items: center;
+            position: sticky;
+            top: calc(100% - 60%);
+            right: calc(100% - 0%);
+            height: rem(40);
+            z-index: 2;
+            width: rem(40);
+            border: none;
+
+            @include mobile {
+                display: flex
+            }
+    }
+
+    &__buttonVissualy {
+        @include visually-hidden;
+    }
+}
+
+@media(max-width: 600px) {
+    .catalog__bodyGrid {
+        grid-template-columns: 1fr;
     }
 }

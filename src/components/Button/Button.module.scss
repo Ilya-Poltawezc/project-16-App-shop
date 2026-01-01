@@ -12,3 +12,45 @@
         background-color: var(--color-small);
     }
 }
+
+.buttonApp {
+    font-size: rem(16);
+    color: var(--color-light);
+    background-color: var(--color-greyText);
+    padding: rem(22) rem(47);
+    border: none;
+    border-radius: rem(4);
+    font-family: var(--font-family-accent);
+    font-weight: 600;
+
+    @include mobile {
+        padding: rem(16) rem(30);
+    }
+
+    &:hover {
+        background-color: var(--color-small);
+    }
+}
+
+.buttonReset {
+    font-size: rem(16);
+    color: var(--color-greyText);
+    background-color: transparent;
+    border: none;
+    border-radius: rem(4);
+    font-weight: 600;
+    font-family: var(--font-family-base);
+}
+
+.buttonShow {
+    font-size: rem(16);
+    color: var(--color-light);
+    background-color: var(--color-primary);
+    padding: rem(22) rem(47);
+    border: none;
+    border-radius: rem(4);
+
+    &:hover {
+        background-color: var(--color-small);
+    }
+}
