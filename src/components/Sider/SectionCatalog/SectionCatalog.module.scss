@@ -6,6 +6,10 @@
     align-items: start;
     column-gap: rem(20);
 
+    @include tablet {
+        justify-content: space-between;
+    }
+
     @include mobile {
         column-gap: 0;
     }
@@ -274,7 +278,7 @@
     }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 488px) {
     .catalog__bodyGrid {
         grid-template-columns: 1fr;
     }

@@ -43,6 +43,10 @@
         column-gap: rem(10);
     }
 
+    &__body {
+        background: url(../../assets/images/back-текст.png) 56%59%/80% no-repeat;
+    }
+
     &__bodyDiv {
         max-width: rem(580);
         padding-block: rem(100);
@@ -114,8 +118,12 @@
     }
 
     &__open {
-        display: flex;
-        flex-direction: column;
-        row-gap: rem(20);
+        display: none;
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+        }
     }
 }

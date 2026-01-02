@@ -1,0 +1,83 @@
+@use '../../../styles/helpers/' as *;
+
+.about {
+    position: relative;
+    background-color: var(--color-violet);
+
+    &__block {
+        display: flex;
+        align-items: end;
+        column-gap: rem(50);
+
+        @include tablet {
+            align-items: center;
+        }
+    }
+
+    &__title {
+        width: rem(440);
+        padding-bottom: rem(160);
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+
+        @include tablet {
+            padding-top: rem(20);
+            padding-bottom: 0;
+        }
+    }
+
+    &__h2 {
+        color: var(--color-light);
+    }
+
+    &__p {
+        max-width: rem(380);
+        color: var(--color-light);
+        font-size: rem(16);
+    }
+
+    &__p2 {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        column-gap: rem(20);
+        color: var(--color-light);
+        font-size: rem(20);
+        font-weight: 700;
+
+        &::before {
+            content: ' ';
+            height: rem(3);
+            width: rem(30);
+            background: url(../../../assets/icons/SneakLine.svg) center/cover no-repeat;
+        }
+    }
+
+    &__img {
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+
+    &__svg {
+        color: aliceblue;
+        position: absolute;
+    }
+}
+
+@media(max-width: 672px) {
+    .about__block {
+        flex-direction: column;
+        padding-bottom: rem(20);
+        row-gap: rem(20);
+    }
+    .about__img {
+        clip-path: none;
+        border-radius: rem(6);
+    }
+    .about__title {
+        width: auto;
+    }
+    .about__svg {
+        display: none;
+    }
+}
