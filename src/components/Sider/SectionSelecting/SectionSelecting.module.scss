@@ -1,0 +1,434 @@
+@use '../../../styles/helpers/' as *;
+
+.select1 {
+    padding-block: rem(60);
+
+    &__div1 {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+        padding: rem(40) rem(100);
+        border-radius: rem(4);
+        background-color: var(--color-secBg);
+
+        @include tablet {
+            padding: rem(15) rem(30);
+        }
+
+        &__block1 {
+            padding-bottom: rem(10);
+            border-bottom: rem(1) solid #808080;
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+
+            &__h2 {
+                @include fluid-text(30, 24);
+
+                font-weight: 700;
+                font-family: var(--font-family-accent);
+            }
+
+            &__p {
+                font-size: rem(16);
+            }
+        }
+
+        &__block2 {
+            padding-bottom: rem(40);
+            border-bottom: rem(1) solid #808080;
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+
+            &__questionPoints {
+                &__textarea {
+                    width: rem(465);
+                    height: rem(245);
+                    resize: none;
+                    border: none;
+                    border-radius: rem(4);
+                    font-size: rem(16);
+                    padding: rem(20);
+                    color: var(--small-text);
+                }
+            }
+        }
+
+        &__block3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__p {
+                font-size: rem(16);
+                color: #808080;
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center center;
+        column-gap: rem(70);
+        row-gap: rem(20);
+
+        @include tablet {
+            column-gap: rem(30);
+        }
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(10);
+        }
+
+        &__cardBlock {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row-reverse;
+            column-gap: rem(10);
+        }
+
+        &__blockP {
+            font-size: rem(16);
+        }
+
+        &__checkBox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            appearance: none;
+            background-color: transparent;
+            width: rem(24);
+            aspect-ratio: 1;
+            border: var(--borderCheckbox);
+            border-radius: rem(4);
+
+            @include mobile {
+                row-gap: rem(5);
+            }
+
+            &:not(:checked) {
+                &::after {
+                    @include hide;
+                }
+            }
+
+            &::after {
+                content: '';
+                width: rem(15);
+                height: rem(12);
+                background: url('../../../assets/icons/GroupCheckbox.svg') center/cover no-repeat;
+                transition-duration: var(--transition-duration);
+            }
+        }
+    }
+
+    &__grid2 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.select2 {
+    padding-block: rem(60);
+
+    &__div1 {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+        padding: rem(40) rem(100);
+        border-radius: rem(4);
+        background-color: var(--color-secBg);
+
+        @include tablet {
+            padding: rem(15) rem(30);
+        }
+
+        &__block1 {
+            padding-bottom: rem(10);
+            border-bottom: rem(1) solid #808080;
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+
+            &__h2 {
+                @include fluid-text(30, 24);
+
+                font-weight: 700;
+                font-family: var(--font-family-accent);
+            }
+
+            &__p {
+                font-size: rem(16);
+            }
+        }
+
+        &__block2 {
+            padding-bottom: rem(20);
+            border-bottom: rem(1) solid #808080;
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+
+            &__questionPoints {
+                &__textarea {
+                    width: rem(465);
+                    height: rem(245);
+                    resize: none;
+                    border: none;
+                    border-radius: rem(4);
+                    font-size: rem(16);
+                    padding: rem(20);
+                    color: var(--small-text);
+                }
+            }
+        }
+
+        &__block3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__p {
+                font-size: rem(16);
+                color: #808080;
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center center;
+        column-gap: rem(70);
+        row-gap: rem(20);
+
+        @include tablet {
+            column-gap: rem(30);
+        }
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(10);
+        }
+
+        &__cardBlock {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row-reverse;
+            column-gap: rem(10);
+        }
+
+        &__blockP {
+            font-size: rem(16);
+        }
+
+        &__checkBox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            appearance: none;
+            background-color: transparent;
+            width: rem(24);
+            aspect-ratio: 1;
+            border: var(--borderCheckbox);
+            border-radius: rem(4);
+
+            @include mobile {
+                row-gap: rem(5);
+            }
+
+            &:not(:checked) {
+                &::after {
+                    @include hide;
+                }
+            }
+
+            &::after {
+                content: '';
+                width: rem(15);
+                height: rem(12);
+                background: url('../../../assets/icons/GroupCheckbox.svg') center/cover no-repeat;
+                transition-duration: var(--transition-duration);
+            }
+        }
+    }
+
+    &__grid2 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        @include mobile {
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: rem(20);
+        }
+    }
+}
+
+.select3 {
+    padding-block: rem(60);
+
+    &__div1 {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+        padding: rem(40) rem(100);
+        border-radius: rem(4);
+        background-color: var(--color-secBg);
+
+        @include tablet {
+            padding: rem(15) rem(30);
+        }
+
+        &__block1 {
+            padding-bottom: rem(10);
+            border-bottom: rem(1) solid #808080;
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+
+            &__h2 {
+                @include fluid-text(30, 24);
+
+                font-weight: 700;
+                font-family: var(--font-family-accent);
+            }
+
+            &__p {
+                font-size: rem(16);
+            }
+        }
+
+        &__block2 {
+            width: 100%;
+            padding-bottom: rem(20);
+            border-bottom: rem(1) solid #808080;
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+
+            &__questionPoints {
+                width: 100%;
+
+                &__textarea {
+                    width: rem(465);
+                    height: rem(245);
+                    resize: none;
+                    border: none;
+                    border-radius: rem(4);
+                    font-size: rem(16);
+                    padding: rem(20);
+                    color: var(--small-text);
+                }
+            }
+        }
+
+        &__block3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__p {
+                font-size: rem(16);
+                color: #808080;
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center center;
+        column-gap: rem(70);
+        row-gap: rem(20);
+
+        @include tablet {
+            column-gap: rem(30);
+        }
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(10);
+        }
+
+        &__cardBlock {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row-reverse;
+            column-gap: rem(10);
+        }
+
+        &__blockP {
+            font-size: rem(16);
+        }
+
+        &__checkBox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            appearance: none;
+            background-color: transparent;
+            width: rem(24);
+            aspect-ratio: 1;
+            border: var(--borderCheckbox);
+            border-radius: rem(4);
+
+            @include mobile {
+                row-gap: rem(5);
+            }
+
+            &:not(:checked) {
+                &::after {
+                    @include hide;
+                }
+            }
+
+            &::after {
+                content: '';
+                width: rem(15);
+                height: rem(12);
+                background: url('../../../assets/icons/GroupCheckbox.svg') center/cover no-repeat;
+                transition-duration: var(--transition-duration);
+            }
+        }
+    }
+
+    &__grid2 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        @include mobile {
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: rem(20);
+        }
+    }
+}
+
+@media(max-width: 900px) {
+    .select1__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 600px) {
+    .select1__grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media(max-width: 524px) {
+    .select3__div1__block2__questionPoints__textarea {
+        width: 100%;
+    }
+}
+@media(max-width: 480px) {
+    .select2__grid2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

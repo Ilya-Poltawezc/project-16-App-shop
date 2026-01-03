@@ -54,3 +54,17 @@
         background-color: var(--color-small);
     }
 }
+
+.buttonNext {
+    font-size: rem(16);
+    color: var(--color-greyText);
+    background-color: transparent;
+    padding: rem(17) rem(42);
+    border: rem(1) solid var(--color-greyText);
+    border-radius: rem(4);
+
+    &:hover {
+        background-color: var(--color-light);
+        border: rem(1) solid var(--color-light);
+    }
+}
