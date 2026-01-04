@@ -19,7 +19,7 @@ export default function SelectingStep3({onChange}) {
                 </div>
                 <div className={styles.select3__div1__block3}>
                     <p className={styles.select3__div1__block3__p}>3 of 3</p>
-                    <ButtonNextStep />
+                    <ButtonNextStep onClick={() => onChange('step3')} />
                 </div>
             </div>
         </section>
