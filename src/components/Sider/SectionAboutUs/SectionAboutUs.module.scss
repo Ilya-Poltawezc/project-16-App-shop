@@ -61,6 +61,10 @@
     &__svg {
         color: aliceblue;
         position: absolute;
+
+        &__circle {
+            color: var(--color-primary);
+        }
     }
 }
 

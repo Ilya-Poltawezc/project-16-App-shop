@@ -1,0 +1,69 @@
+@use '../../../styles/helpers/' as *;
+
+.team {
+    position: relative;
+    display: flex;
+    background-color: var(--color-violet);
+
+    &__div {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+        padding-block: rem(60);
+
+        &__title {
+            color: var(--color-light);
+        }
+
+        &__block {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: rem(40);
+            column-gap: rem(20);
+
+            @include tablet {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+
+            &__name {
+                font-size: rem(24);
+                color: var(--color-light);
+                font-weight: 700;
+            }
+
+            &__role {
+                font-size: rem(16);
+                color: var(--color-light);
+            }
+        }
+    }
+
+    &__svg {
+        right: 0;
+        color: var(--color-primary);
+        position: absolute;
+
+        @include mobile {
+            display: none;
+        }
+
+        &__circle1 {
+            color: var(--color-light);
+        }
+
+        &__circle2 {
+            color: var(--color-light);
+        }
+    }
+}

@@ -7,7 +7,7 @@ export default function FigureIcon() {
             <g clipPath="url(#clip0_43_1020)">
             <circle cx="-14" cy="102" r="321.5" stroke="white" strokeOpacity="0.5"/>
             <circle cx="401.5" cy="-33.5" r="148" stroke="white" strokeOpacity="0.5"/>
-            <circle cx="511.5" cy="65.5" r="7.5" fill="#F14F4F"/>
+            <circle className={styles.about__svg__circle} cx="511.5" cy="65.5" r="7.5" fill="#F14F4F"/>
             </g>
             <defs>
             <clipPath id="clip0_43_1020">
