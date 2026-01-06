@@ -68,3 +68,24 @@
         border: rem(1) solid var(--color-light);
     }
 }
+
+@keyframes rotate {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+.buttonReverse {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    animation: rotate;
+}
+
+.buttonReverseRotate {
+    transform: rotate(45deg);
+}
