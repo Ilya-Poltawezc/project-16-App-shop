@@ -1,3 +1,4 @@
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import SectionAboutUs from './components/Sider/SectionAboutUs/SectionAboutUs';
 import SectionCatalog from './components/Sider/SectionCatalog/SectionCatalog';
@@ -20,6 +21,7 @@ function App() {
       <SectionContacts />
       <SectionForm />
     </main>
+    <Footer />
     </>
   )
 }

@@ -1,0 +1,44 @@
+@use '../../styles/helpers/' as *;
+
+.footer {
+    padding-block: rem(26);
+    background-color: var(--color-greyText);
+
+    &__titleBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        column-gap: rem(40);
+
+        @include mobile {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center center;
+            row-gap: rem(10);
+            column-gap: rem(20);
+        }
+    }
+
+    &__link {
+        text-align: center;
+        text-decoration: none;
+        font-size: rem(14);
+    }
+}
+
+@media(max-width: 870px) {
+    .footer__titleBlock {
+        flex-direction: column;
+        row-gap: rem(10);
+    }
+}
+@media(max-width: 410px) {
+    .footer__title {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
