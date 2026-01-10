@@ -78,6 +78,12 @@
                 font-weight: 700;
                 border-radius: rem(4);
             }
+
+            &__pError {
+                padding-top: rem(10);
+                font-size: rem(16);
+                color: var(--color-primary);
+            }
         }
     }
 
