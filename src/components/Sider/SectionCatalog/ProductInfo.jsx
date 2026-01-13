@@ -1,17 +1,26 @@
+import { useState } from 'react';
 import ButtonShow from '../../Button/ButtondShow';
 import styles from './SectionCatalog.module.scss';
 import { content } from './size.data'
+import ShowButton from '../../IconsComponents/ShowButton';
+import ShowButtonBacket from '../../IconsComponents/ShowButtonBacket';
 
 export default function ProductInfo() {
+    const [hover, setHover] = useState(null)
+    
     return (
         <div className={styles.catalog__body}>
             <div className={styles.catalog__bodyGrid}>
                     {content.map(({ id, description, price, image }) => (
-                        <button key={id} id={id} className={styles.catalog__bodyCard}>
+                        <article onMouseEnter={() => setHover(id)} onMouseLeave={() => setHover(null)} key={id} id={id} className={styles.catalog__bodyCard}>
                             <img width={280} height={293} src={image} alt="Info" />
                             <p className={styles.catalog__blockP}>{description}</p>
                             <p className={styles.catalog__bodyPrace}>{price}</p>
-                        </button>
+                            {<div className={`${styles.catalog__div} ${hover === id ? styles.catalog__divActive : ''}`}> 
+                                   <button aria-label="More details" className={styles.catalog__div__buttonShow}><ShowButton /></button>
+                                   <button aria-label="Add to cart" className={styles.catalog__div__buttonShow}><ShowButtonBacket /></button>
+                                </div>}
+                        </article>
                     ))}
             </div>
             <ButtonShow />
