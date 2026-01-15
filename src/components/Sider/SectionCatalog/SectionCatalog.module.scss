@@ -316,6 +316,184 @@
         visibility: visible;
         transform: scale(1);
     }
+
+    &__modal {
+        z-index: 10;
+        position: fixed;
+        inset: 0;
+        background: rgba(68, 75, 88, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__modalDiv {
+        background: var(--color-light);
+        padding: rem(40);
+        border-radius: rem(4);
+        min-width: rem(1140);
+
+        &__div1 {
+            display: flex;
+            justify-content: space-between;
+
+            &__blockImg {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(20);
+
+                &__flexImg {
+                    display: flex;
+                    column-gap: rem(20);
+                }
+            }
+
+            &__block {
+                max-width: rem(430);
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(15);
+
+                &__block1 {
+                    display: flex;
+                    justify-content: start;
+                    column-gap: rem(47);
+                    
+                    &__desc {
+                        font-size: rem(16);
+                        color: var(--color-grey);
+                    }
+                }
+
+                &__block2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    row-gap: rem(20);
+
+                    &__title {
+                        font-size: rem(24);
+                        line-height: 140%;
+                        color: var(--color-greyText);
+                    }
+
+                    &__blockSvg {
+                        display: flex;
+                        column-gap: rem(4);
+
+                        &__svg {
+                            color: var(--color-primary);
+                        }
+                    }
+
+                    &__select {
+                        font-size: rem(16);
+                        color: var(--color-greyText);
+                    }
+
+                    &__blockButton {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        column-gap: rem(20);
+                        row-gap: rem(20);
+
+                        &__btn {
+                            padding: rem(9) rem(26);
+                            font-size: rem(14);
+                            font-weight: 600;
+                            color: var(--color-greyText);
+                            border: rem(1) solid var(--color-grey);
+                            border-radius: rem(4);
+                            background-color: transparent;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        &__btnActive {
+                            background-color: var(--color-small);
+                        }
+                    }
+                }
+
+                &__block3 {
+                    @include fluid-text(30, 26);
+
+                    font-weight: 700;
+                    color: var(--color-greyText);
+                }
+
+                &__block4 {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: rem(20);
+
+                    &__ul {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: rem(10);
+                    }
+
+                    &__p {
+                        display: flex;
+                        align-items: center;
+                        column-gap: rem(10);
+                        font-size: rem(14);
+                        color: var(--color-grey);
+
+                        &::before {
+                            content: '';
+                            width: rem(15);
+                            height: rem(12);
+                            background: url('../../../assets/icons/VectorModal.svg') center/cover no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__div2 {
+            padding-top: rem(40);
+            display: flex;
+            justify-content: space-between;
+
+            &__block1 {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(20);
+
+                &__desc {
+                    font-size: rem(24);
+                    color: var(--color-greyText);
+                }
+
+                &__description {
+                    max-width: rem(430);
+                    font-size: rem(16);
+                    line-height: 140%;
+                    color: var(--color-greyText);
+                }
+            }
+
+            &__block2 {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(20);
+
+                &__cell {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: rem(10);
+
+                    &__p {
+                        font-size: rem(16);
+                        color: var(--color-greyText);
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media(max-width: 488px) {
