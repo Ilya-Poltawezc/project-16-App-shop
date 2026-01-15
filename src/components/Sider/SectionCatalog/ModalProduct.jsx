@@ -4,6 +4,7 @@ import styles from './SectionCatalog.module.scss'
 import productImg from '../../../assets/images/ProductImg/productImg.png'
 import StarIcon from "../../IconsComponents/StarIcon";
 import { size } from './size.data'
+import clsx from 'clsx';
 import ButtonOrder from "../../Button/ButtonOrder";
 
 const modalRoot = document.getElementById("modal-root");
@@ -15,7 +16,7 @@ export function ModalProduct({ isOpen, onClose }) {
 
   return createPortal(
     <div className={styles.catalog__modal} onClick={onClose}>
-      <div className={styles.catalog__modalDiv} onClick={(e) => e.stopPropagation()}>
+      <div className={clsx('container', styles.catalog__modalDiv)} onClick={(e) => e.stopPropagation()}>
         <div className={styles.catalog__modalDiv__div1}>
             <div className={styles.catalog__modalDiv__div1__blockImg}>
                 <img width={520} height={460} src={productImg} alt="Sneakers" />
