@@ -7,13 +7,20 @@ import SectionForm from './components/Sider/SectionForm/SectionForm';
 import SectionQuestions from './components/Sider/SectionQuestions/SectionQuestions';
 import SectionSelecting from './components/Sider/SectionSelecting/SectionSelecting';
 import SectionTeam from './components/Sider/SectionTeam/SectionTeam';
+import { useState } from 'react';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart((prev) => [...prev, product])
+  }
+
   return (
     <>
-    <Header />
+    <Header cart={cart} />
     <main>
-      <SectionCatalog />
+      <SectionCatalog addToCart={addToCart} />
       <SectionAboutUs />
       <SectionSelecting />
       <SectionTeam />

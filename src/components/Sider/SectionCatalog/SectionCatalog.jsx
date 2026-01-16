@@ -8,7 +8,7 @@ import ButtonReset from '../../Button/ButtonReset';
 import ProductInfo from './ProductInfo';
 import ButtonShowDetails from './ButtonShowDetails';
 
-export default function SectionCatalog() {
+export default function SectionCatalog({ addToCart }) {
     return (
         <div id='catalog' className={clsx('container', styles.catalog)}>
             <div className={styles.catalog__title}>
@@ -20,7 +20,7 @@ export default function SectionCatalog() {
                 <ButtonReset />
             </div>
             <ButtonShowDetails />
-            <ProductInfo />
+            <ProductInfo addToCart={addToCart} />
         </div>
     )
 }

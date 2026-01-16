@@ -37,13 +37,22 @@
     }
 
     &__linkBac {
+        position: relative;
         font-size: rem(14);
         display: flex;
         align-items: center;
+        color: var(--color-light);
         column-gap: rem(10);
+        border: none;
+        background-color: transparent;
+
+        &:hover {
+            color: var(--color-small);
+        }
     }
 
     &__body {
+        position: relative;
         background: url(../../assets/images/back-текст.png) 56%59%/80% no-repeat;
     }
 
@@ -124,6 +133,116 @@
             display: flex;
             flex-direction: column;
             row-gap: rem(20);
+        }
+    }
+
+    &__openBasket {
+        position: relative;
+        z-index: 10;
+        max-height: 0;
+        max-width: 460px;
+        overflow-y: scroll;
+        top: calc(100% - 92.5%);
+        right: calc(100% - 81.8%);
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+        position: absolute;
+        padding: rem(10) rem(20);
+        background-color: var(--color-light);
+        opacity: 0;
+        transition: 0.3s;
+        pointer-events: none;
+
+        &__card {
+            display: flex;
+            align-items: center;
+            column-gap: rem(10);
+
+            &__block2 {
+                display: flex;
+                align-items: center;
+                column-gap: rem(50);
+
+                &__p {
+                    font-size: rem(14);
+                    color: var(--color-greyText);
+                }
+
+                &__span {
+                    font-size: rem(20);
+                    font-weight: 700;
+                }
+
+                &__btn {
+                    background-color: transparent;
+                    border: none;
+                }
+            }
+        }
+
+        &__div {
+            margin: rem(-20);
+            z-index: 10;
+            position: sticky;
+            bottom: 0;
+            padding: rem(20);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--color-light);
+            box-shadow: 0 -4px 10px 0 rgba(0, 13, 84, 0.1);
+
+            &__block1 {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(10);
+
+                &__p {
+                    font-size: rem(14);
+                }
+
+                &__price {
+                    font-size: rem(20);
+                    font-weight: 700;
+                }
+            }
+
+            &__button {
+                padding: rem(17) rem(40);
+                border: none;
+                background-color: var(--color-primary);
+                color: var(--color-light);
+                font-size: rem(16);
+                font-weight: 700;
+                border-radius: rem(4);
+            }
+        }
+    }
+
+    &__openBasketHide {
+        max-height: 50vh;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &__count {
+        position: absolute;
+        right: calc(100% - 107%);
+        bottom: calc(100% - 130%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(20);
+        aspect-ratio: 1;
+
+        &__span {
+            color: var(--color-light);
+            font-size: rem(14);
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            width: rem(20);
+            aspect-ratio: 1;
         }
     }
 }
