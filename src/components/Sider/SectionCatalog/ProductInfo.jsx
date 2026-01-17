@@ -3,12 +3,12 @@ import ButtonShow from '../../Button/ButtondShow';
 import styles from './SectionCatalog.module.scss';
 import { content } from './size.data'
 import ShowButton from '../../IconsComponents/ShowButton';
-import ShowButtonBacket from '../../IconsComponents/ShowButtonBacket';
 import { ModalProduct } from './ModalProduct';
 
 export default function ProductInfo({ addToCart }) {
     const [hover, setHover] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
+    const [active, setActive] = useState(false)
     
     return (
         <div className={styles.catalog__body}>
@@ -20,7 +20,7 @@ export default function ProductInfo({ addToCart }) {
                             <p className={styles.catalog__bodyPrace}>{product.price}</p>
                             {<div className={`${styles.catalog__div} ${hover === product.id ? styles.catalog__divActive : ''}`}> 
                                    <button onClick={() => setIsOpen(true)} aria-label="More details" className={styles.catalog__div__buttonShow}><ShowButton /></button>
-                                   <button onClick={() => addToCart(product)} aria-label="Add to cart" className={styles.catalog__div__buttonShow}><ShowButtonBacket /></button>
+                                   <button onClick={() => {addToCart(product), setActive(product.id)}} aria-label="Add to cart" className={styles.catalog__div__buttonShowCard}><span className={`${styles.catalog__div__buttonShowCard__accept} ${active === product.id ? styles.catalog__div__buttonShowCard__acceptTewo : ''}`}></span></button>
                                 </div>}
                         </article>
                     ))}

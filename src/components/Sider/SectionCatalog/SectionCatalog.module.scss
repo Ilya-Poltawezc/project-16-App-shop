@@ -306,6 +306,34 @@
             }
         }
 
+        &__buttonShowCard {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-greyText);
+            width: rem(80);
+            aspect-ratio: 1;
+            border: none;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: var(--color-small);
+                transform: scale(1.1);
+            }
+
+            &__accept {
+                transition: all 0.3s;
+                width: rem(30);
+                height: rem(30);
+                background: url('../../../assets/icons/buttonShowBacket.svg') center/cover no-repeat;
+            }
+
+            &__acceptTewo {
+                color: var(--color-light);
+                background: url('../../../assets/icons/Accept.svg') center/cover no-repeat;
+            }
+        }
+
         &__buttonSvg {
             color: var(--color-light);
         }
