@@ -154,10 +154,25 @@
         transition: 0.3s;
         pointer-events: none;
 
+        @include tablet {
+            top: calc(100% - 50%);
+            right: calc(100% - 98%);
+        }
+
+        @include mobile {
+            margin-left: rem(7);
+        }
+
         &__card {
+            margin: rem(-20);
+            padding: rem(20);
             display: flex;
             align-items: center;
             column-gap: rem(10);
+
+            &:hover {
+                background-color: rgba(204, 217, 242, 0.2);
+            }
 
             &__block2 {
                 display: flex;
@@ -177,6 +192,10 @@
                 &__btn {
                     background-color: transparent;
                     border: none;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
                 }
             }
         }
@@ -244,5 +263,40 @@
             width: rem(20);
             aspect-ratio: 1;
         }
+    }
+
+    &__error {
+        top: calc(100% - 92%);
+        right: calc(100% - 82%);
+        position: absolute;
+        padding: rem(20);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: rem(4);
+        max-height: 0;
+        opacity: 0;
+        background-color: var(--color-light);
+        transition: all 0.2s;
+
+        @include tablet {
+            z-index: 10;
+            top: calc(100% - 50%);
+            right: calc(100% - 98%);
+        }
+
+        @include mobile {
+            margin-left: rem(7);
+        }
+
+        &__p {
+            font-size: rem(14);
+            color: var(--color-greyText);
+        }
+    }
+
+    &__errorHide {
+        max-height: rem(20);
+        opacity: 1;
     }
 }

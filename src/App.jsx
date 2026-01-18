@@ -8,6 +8,7 @@ import SectionQuestions from './components/Sider/SectionQuestions/SectionQuestio
 import SectionSelecting from './components/Sider/SectionSelecting/SectionSelecting';
 import SectionTeam from './components/Sider/SectionTeam/SectionTeam';
 import { useState } from 'react';
+import { CartContext } from './context/CartContext';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -16,11 +17,15 @@ function App() {
     setCart((prev) => [...prev, product])
   }
 
+  const removeFromCart = (id) => {
+    setCart(prev => prev.filter(item => item.id !== id))
+  }
+
   return (
-    <>
-    <Header cart={cart} />
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <Header />
     <main>
-      <SectionCatalog addToCart={addToCart} />
+      <SectionCatalog />
       <SectionAboutUs />
       <SectionSelecting />
       <SectionTeam />
@@ -29,7 +34,7 @@ function App() {
       <SectionForm />
     </main>
     <Footer />
-    </>
+    </CartContext.Provider>
   )
 }
 

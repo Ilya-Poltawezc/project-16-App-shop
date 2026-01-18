@@ -7,8 +7,11 @@ import ButtonApp from '../../Button/ButtonApp';
 import ButtonReset from '../../Button/ButtonReset';
 import ProductInfo from './ProductInfo';
 import ButtonShowDetails from './ButtonShowDetails';
+import { useContext } from 'react';
+import { CartContext } from '../../../context/CartContext';
 
-export default function SectionCatalog({ addToCart }) {
+export default function SectionCatalog() {
+    const { addToCart } = useContext(CartContext);
     return (
         <div id='catalog' className={clsx('container', styles.catalog)}>
             <div className={styles.catalog__title}>
@@ -20,7 +23,7 @@ export default function SectionCatalog({ addToCart }) {
                 <ButtonReset />
             </div>
             <ButtonShowDetails />
-            <ProductInfo addToCart={addToCart} />
+            <ProductInfo />
         </div>
     )
 }

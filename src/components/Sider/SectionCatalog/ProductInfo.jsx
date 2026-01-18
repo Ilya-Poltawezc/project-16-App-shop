@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ButtonShow from '../../Button/ButtondShow';
 import styles from './SectionCatalog.module.scss';
 import { content } from './size.data'
 import ShowButton from '../../IconsComponents/ShowButton';
 import { ModalProduct } from './ModalProduct';
+import { CartContext } from '../../../context/CartContext';
 
-export default function ProductInfo({ addToCart }) {
+export default function ProductInfo() {
+    const { addToCart} = useContext(CartContext);
     const [hover, setHover] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
     const [active, setActive] = useState(false)

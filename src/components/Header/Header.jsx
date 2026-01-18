@@ -5,10 +5,12 @@ import Button from '../Button/Button';
 import BacketIcon from '../IconsComponents/BacketIcon';
 import { headerMenu } from './header.data'
 import ButtonMenuHeader from './ButtonMenuHeader';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import TrashIcon from '../IconsComponents/TrashIcon';
+import { CartContext } from '../../context/CartContext';
 
-export default function Header({ cart }) {
+export default function Header() {
+  const { cart, removeFromCart } = useContext(CartContext);
   const [open, setOpen] = useState(false)
 
   const cartItems = cart || []
@@ -45,7 +47,7 @@ export default function Header({ cart }) {
                    </div>
                 </button>
                 {/* {Next we display the shopping cart itself, where they are added} */}
-                  {<div className={`${styles.header__openBasket} ${open ? styles.header__openBasketHide : ""}`}>
+                  {cart.length === 0 ? <span className={`${styles.header__error} ${open ? styles.header__errorHide : ''}`}><p className={styles.header__error__p}>You haven't selected a product yet, go to the catalog!</p></span> : <div className={`${styles.header__openBasket} ${open ? styles.header__openBasketHide : ""}`}>
                         {cart.map((item) => (
                       <div key={item.id} className={styles.header__openBasket__card}>
                           <img width={100} height={60} src={item.image} alt={item.description} />
@@ -54,7 +56,7 @@ export default function Header({ cart }) {
                             <p className={styles.header__openBasket__card__block2__p}>{item.description}</p>
                             <span className={styles.header__openBasket__card__block2__span}>{item.price}</span>
                           </div>
-                          <button className={styles.header__openBasket__card__block2__btn}>
+                          <button onClick={() => removeFromCart(item.id)} className={styles.header__openBasket__card__block2__btn}>
                             <TrashIcon />
                           </button>
                       </div>
