@@ -9,6 +9,7 @@ export default function ButtonMenuHeader() {
     const { cart, removeFromCart } = useContext(CartContext);
     const [isOpen, setIsOpen] = useState(false)
     const [open, setOpen] = useState(false)
+    const { openCart } = useContext(CartContext);
 
   const cartItems = cart || []
   const total = cartItems.reduce((acc, item) => {
@@ -68,8 +69,13 @@ export default function ButtonMenuHeader() {
                                             {total} $
                                           </p>
                                         </div>
-                                        <button className={styles.header__openBasket__div__button}>
-                                          Go to cart
+                                        <button onClick={(e) => {
+                                              e.stopPropagation();
+                                              console.log("CLICK GO TO CART");
+                                              setOpen(false);
+                                              openCart();
+                                        }} className={styles.header__openBasket__div__button}>
+                                          Go to cart 
                                         </button>
                                       </div>
                                       </div>}

@@ -1,0 +1,18 @@
+@use '../../../styles/helpers/' as *;
+
+.modal {
+    z-index: 13;
+    position: fixed;
+    inset: 0;
+    background: rgba(68, 75, 88, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__div {
+        background: var(--color-light);
+        padding: rem(40);
+        border-radius: rem(4);
+        max-width: rem(1140);
+    }
+}
