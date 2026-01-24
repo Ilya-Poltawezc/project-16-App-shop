@@ -24,7 +24,12 @@ function App() {
   }
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, isCartOpen,  openCart: () => {setIsCartOpen(true)}, closeCart: () => setIsCartOpen(false), }}>
+    <CartContext.Provider value={{ cart, 
+          addToCart, 
+          removeFromCart, 
+          isCartOpen,  
+          openCart: () => {setIsCartOpen(true)}, 
+          closeCart: () => setIsCartOpen(false), }}>
     <Header />
     <main>
       <SectionCatalog />

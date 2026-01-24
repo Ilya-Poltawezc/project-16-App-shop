@@ -10,7 +10,7 @@ import TrashIcon from '../IconsComponents/TrashIcon';
 import { CartContext } from '../../context/CartContext';
 
 export default function Header() {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart, openCart } = useContext(CartContext)
   const [open, setOpen] = useState(false)
 
   const cartItems = cart || []
@@ -72,7 +72,7 @@ export default function Header() {
                         {total} $
                       </p>
                     </div>
-                    <button className={styles.header__openBasket__div__button}>
+                    <button onClick={openCart} className={styles.header__openBasket__div__button}>
                       Go to cart
                     </button>
                   </div>

@@ -6,10 +6,9 @@ import TrashIcon from '../IconsComponents/TrashIcon';
 import { CartContext } from '../../context/CartContext';
 
 export default function ButtonMenuHeader() {
-    const { cart, removeFromCart } = useContext(CartContext);
+    const { cart, removeFromCart, openCart } = useContext(CartContext);
     const [isOpen, setIsOpen] = useState(false)
     const [open, setOpen] = useState(false)
-    const { openCart } = useContext(CartContext);
 
   const cartItems = cart || []
   const total = cartItems.reduce((acc, item) => {
@@ -69,12 +68,7 @@ export default function ButtonMenuHeader() {
                                             {total} $
                                           </p>
                                         </div>
-                                        <button onClick={(e) => {
-                                              e.stopPropagation();
-                                              console.log("CLICK GO TO CART");
-                                              setOpen(false);
-                                              openCart();
-                                        }} className={styles.header__openBasket__div__button}>
+                                        <button onClick={openCart} className={styles.header__openBasket__div__button}>
                                           Go to cart 
                                         </button>
                                       </div>
