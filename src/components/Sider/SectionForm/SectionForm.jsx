@@ -37,7 +37,7 @@ export default function SectionForm() {
   }
 
     return (
-        <section className={styles.forms}>
+        <section id='delivery' className={styles.forms}>
             <div className={clsx('container', styles.forms__div)}>
                 <form onSubmit={handleSubmit} className={styles.forms__form}>
                     <div className={styles.forms__form__block}>

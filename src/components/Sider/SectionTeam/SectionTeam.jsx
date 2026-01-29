@@ -5,7 +5,7 @@ import FigureTeamIcon from '../../IconsComponents/FigureTeamIcon';
 
 export default function SectionTeam() {
     return (
-        <section className={styles.team}>
+        <section id='team' className={styles.team}>
             <FigureTeamIcon />
             <div className={clsx('container', styles.team__div)}>
                 <h2 className={styles.team__div__title}>Our team</h2>

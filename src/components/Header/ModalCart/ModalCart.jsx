@@ -1,10 +1,15 @@
 import { createPortal } from "react-dom";
 import styles from './ModalCart.module.scss'
 import clsx from 'clsx';
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
+import Successed from "./Successed";
 
 export default function ModalCart() {
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [name, setName] = useState("")
+  const [tel, setTel] = useState("")
+  const [errors, setErrors] = useState({})
   console.log("MODAL COMPONENT RENDER");
   const { isCartOpen, closeCart, cart, removeFromCart } = useContext(CartContext);
   
@@ -20,12 +25,40 @@ export default function ModalCart() {
   return acc + priceNumber;
   }, 0)
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const newErrors = {}
+
+    if (!name.trim()) {
+      newErrors.name = "Name necessarily"
+    }
+
+    if (!tel.trim()) {
+      newErrors.tel = "Without a phone number we won't be able to contact you."
+    } else if (!tel.includes("+")) {
+      newErrors.tel = `Incorrect phone add "+"`
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      setIsSuccess(true)
+
+      setTimeout(() => {
+        location.reload()
+      }, 1000)
+    }
+  }
+
+  
   return createPortal(
     <div className={styles.modal} onClick={(e) => {
       if (e.target === e.currentTarget) {
       closeCart()
       }
     }}>
+      {isSuccess ? <Successed /> : 
       <div className={clsx("container", styles.modal__div)} onClick={(e) => e.stopPropagation()}>
         <div className={styles.modal__div__block1}>
           <p className={styles.modal__div__block1__title}>Placing an order</p>
@@ -64,20 +97,32 @@ export default function ModalCart() {
               </div>
             ))}
         </div>
-        <form className={styles.modal__div__block3}>
+        <form onSubmit={handleSubmit} className={styles.modal__div__block3}>
           <label htmlFor="formName">
             <input 
               className={styles.modal__div__block3__inpt} 
-              type="text" 
+              type="text"
+              value={name}
+              style={{
+                  border: errors.name ? '1px solid red' : null,
+              }} 
+              onChange={(e) => setName(e.target.value)}
               id="formName"
               placeholder="Your name" />
+              {errors.name && <p className={styles.modal__div__block3__error}>{errors.name}</p>}
           </label>
           <label htmlFor="formTel">
             <input 
               className={styles.modal__div__block3__inpt} 
               type="text" 
+              value={tel}
+              style={{
+                  border: errors.tel ? '1px solid red' : null,
+              }}
+              onChange={(e) => setTel(e.target.value)}
               id="formTel"
               placeholder="Your phone" />
+              {errors.tel && <p className={styles.modal__div__block3__error}>{errors.tel}</p>}
           </label>
           <label htmlFor="formEmail">
             <input 
@@ -86,11 +131,11 @@ export default function ModalCart() {
               id="formEmail"
               placeholder="Your email" />
           </label>
+          <button type="submit" className={styles.modal__div__button}>
+             Place an order
+          </button>
         </form>
-        <button type="submit" className={styles.modal__div__button}>
-          Place an order
-        </button>
-      </div>
+      </div>}
     </div>,
     document.getElementById("modalCart-root")
   );

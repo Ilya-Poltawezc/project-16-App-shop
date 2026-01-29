@@ -13,10 +13,15 @@
         background: var(--color-light);
         display: flex;
         flex-direction: column;
-        row-gap: rem(40);
+        row-gap: rem(20);
         padding: rem(40);
         border-radius: rem(4);
         width: rem(580);
+        max-height: 95vh;
+
+        @include mobile {
+            margin-inline: rem(20);
+        }
 
         &__block1 {
             display: flex;
@@ -35,6 +40,8 @@
         }
 
         &__block2 {
+            max-height: 60vh;
+            overflow: scroll;
             display: flex;
             flex-direction: column;
             row-gap: rem(20);
@@ -68,6 +75,11 @@
                 display: flex;
                 column-gap: rem(10);
                 align-items: center;
+
+                &:hover {
+                    transition: all 0.2s;
+                    background-color: var(--color-bg);
+                }
             }
 
             &__blockTwo {
@@ -77,12 +89,14 @@
                 justify-content: space-between;
 
                 &__p {
-                    font-size: rem(16);
+                    @include fluid-text(16, 14);
+
                     color: var(--color-greyText);
                 }
 
                 &__span {
-                    font-size: rem(18);
+                    @include fluid-text(18, 15);
+
                     font-weight: 700;
                 }
 
@@ -115,6 +129,11 @@
                 border-radius: rem(4);
                 background-color: var(--color-bg);
             }
+
+            &__error {
+                font-size: rem(14);
+                color: var(--color-primary);
+            }
         }
 
         &__button {
@@ -127,6 +146,65 @@
             font-size: rem(16);
             color: var(--color-light);
             font-weight: 700;
+
+            &:hover {
+                background-color: var(--color-small);
+            }
         }
+    }
+
+    &__suces {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: rgba(68, 75, 88, 0.9);
+        width: 100vw;
+        height: 100vh;
+    }
+
+    @keyframes success {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        70% {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    &__checkmark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(135);
+        background-color: var(--color-light);
+        border-radius: 50%;
+        font-size: rem(90);
+        color: #4caf50;
+        animation: success 0.4s ease-out forwards;
+    }
+}
+
+@media(max-width: 550px) {
+    .modal__div {
+        padding: rem(20);
+    }
+    .modal__div__block2__blockTwo {
+        flex-direction: column;
+        align-items: start;
+    }
+    .modal__div__block2 {
+        padding: rem(10);
     }
 }

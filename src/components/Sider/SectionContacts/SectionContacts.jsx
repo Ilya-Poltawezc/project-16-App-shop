@@ -8,7 +8,7 @@ export default function SectionContacts() {
     const [open, setOpen] = useState(false)
 
     return (
-        <section className={styles.contacts}>
+        <section id='contacts' className={styles.contacts}>
             <div className={clsx('container', styles.contacts__div)}>
                 <div className={styles.contacts__div1}>
                     <p className={styles.contacts__div1__h}>Contacts</p>
