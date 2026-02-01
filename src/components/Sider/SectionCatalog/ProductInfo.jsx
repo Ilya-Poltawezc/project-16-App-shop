@@ -11,12 +11,17 @@ export default function ProductInfo() {
     const [hover, setHover] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
     const [active, setActive] = useState(false)
+    const [visibleCount, setVisibleCount] = useState(9)
+
+    const showMore = () => {
+        setVisibleCount(prev => prev + 6)
+    };
     
     return (
         <div className={styles.catalog__body}>
             <div className={styles.catalog__bodyGrid}>
-                    {content.map((product) => (
-                        <article key={product.id} onMouseEnter={() => setHover(product.id)} onMouseLeave={() => setHover(null)} id={product.id} className={styles.catalog__bodyCard}>
+                    {content.slice(0, visibleCount).map((product) => (
+                        <article key={product.id} onMouseEnter={() => setHover(product.id)} onMouseLeave={() => setHover(null)} id={product.id} className={`${styles.catalog__bodyCard} ${styles.catalog__bodyCard__cart}`}>
                             <img width={280} height={293} src={product.image} alt="Info" />
                             <p className={styles.catalog__blockP}>{product.description}</p>
                             <p className={styles.catalog__bodyPrace}>{product.price}</p>
@@ -27,7 +32,10 @@ export default function ProductInfo() {
                         </article>
                     ))}
             </div>
-            <ButtonShow />
+            {/* hide button if cards === 0 */}
+            {visibleCount < content.length && (
+                <ButtonShow onClick={showMore} />
+            )}
             <ModalProduct isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </div>
     )

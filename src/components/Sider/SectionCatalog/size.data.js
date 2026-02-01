@@ -22,4 +22,10 @@ export const content = [
     {id: 7, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
     {id: 8, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
     {id: 9, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 10, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 11, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 12, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 13, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 14, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
+    {id: 15, description: 'Nike Air Force 1 07 QS', image: infoCard, price: `11000 $`},
 ]

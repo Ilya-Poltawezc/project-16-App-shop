@@ -85,7 +85,7 @@ export default function Header() {
       <div className={clsx('container', styles.header__body)}>
         <div className={styles.header__bodyDiv}>
             <h1 className={styles.header__bodyTitle}>Sneakers from famous brands
-            with delivery throughout Russia and the CIS</h1>
+            with delivery throughout Ukraine and the CIS</h1>
             <p className={styles.header__descTitle}>We sell sneakers from Nike, Adidas, Puma, Reebok, Converse and many other brands at low prices.</p>
             <Button />
         </div>

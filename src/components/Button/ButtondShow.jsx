@@ -1,7 +1,7 @@
 import styles from './Button.module.scss'
 
-export default function ButtonShow() {
+export default function ButtonShow({onClick}) {
     return (
-        <button className={styles.buttonShow}>Show more</button>
+        <button onClick={onClick} className={styles.buttonShow}>Show more</button>
     )
 }

@@ -1,7 +1,11 @@
 import styles from './Button.module.scss'
 
 export default function ButtonReset() {
+    const reset = () => {
+        location.reload()
+    }
+
     return (
-        <button type='reset' className={styles.buttonReset}>Reset</button>
+        <button onClick={reset} type='reset' className={styles.buttonReset}>Reset</button>
     )
 }
