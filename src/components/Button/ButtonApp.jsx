@@ -1,7 +1,7 @@
 import styles from './Button.module.scss'
 
-export default function ButtonApp() {
+export default function ButtonApp({setAppliedSize, selectedSize}) {
     return (
-        <button className={styles.buttonApp}>Apply</button>
+        <button onClick={() => setAppliedSize(selectedSize)} className={styles.buttonApp}>Apply</button>
     )
 }

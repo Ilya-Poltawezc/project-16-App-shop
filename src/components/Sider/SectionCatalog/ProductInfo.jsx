@@ -6,7 +6,7 @@ import ShowButton from '../../IconsComponents/ShowButton';
 import { ModalProduct } from './ModalProduct';
 import { CartContext } from '../../../context/CartContext';
 
-export default function ProductInfo() {
+export default function ProductInfo({ selectedSize, appliedSize }) {
     const { addToCart} = useContext(CartContext);
     const [hover, setHover] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
@@ -15,12 +15,18 @@ export default function ProductInfo() {
 
     const showMore = () => {
         setVisibleCount(prev => prev + 6)
-    };
+    }
+
+    const filteredContent = appliedSize
+    ? content.filter(content =>
+        content.sizes.includes(appliedSize)
+      )
+    : content
     
     return (
         <div className={styles.catalog__body}>
             <div className={styles.catalog__bodyGrid}>
-                    {content.slice(0, visibleCount).map((product) => (
+                    {filteredContent.slice(0, visibleCount).map((product) => (
                         <article key={product.id} onMouseEnter={() => setHover(product.id)} onMouseLeave={() => setHover(null)} id={product.id} className={`${styles.catalog__bodyCard} ${styles.catalog__bodyCard__cart}`}>
                             <img width={280} height={293} src={product.image} alt="Info" />
                             <p className={styles.catalog__blockP}>{product.description}</p>
@@ -33,7 +39,7 @@ export default function ProductInfo() {
                     ))}
             </div>
             {/* hide button if cards === 0 */}
-            {visibleCount < content.length && (
+            {visibleCount < filteredContent.length && (
                 <ButtonShow onClick={showMore} />
             )}
             <ModalProduct isOpen={isOpen} onClose={() => setIsOpen(false)} />

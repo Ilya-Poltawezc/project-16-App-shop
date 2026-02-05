@@ -7,23 +7,23 @@ import ButtonApp from '../../Button/ButtonApp';
 import ButtonReset from '../../Button/ButtonReset';
 import ProductInfo from './ProductInfo';
 import ButtonShowDetails from './ButtonShowDetails';
-import { useContext } from 'react';
-import { CartContext } from '../../../context/CartContext';
+import { useState } from 'react';
 
 export default function SectionCatalog() {
-    const { addToCart } = useContext(CartContext);
+    const [selectedSize, setSelectedSize] = useState(null);
+    const [appliedSize, setAppliedSize] = useState(null);
     return (
         <div id='catalog' className={clsx('container', styles.catalog)}>
             <div className={styles.catalog__title}>
                 <h2 className={styles.catalog__h2}>Selection<br></br> by parameters</h2>
                 <RangeInput />
                 <CheckBoxInput />
-                <SizeCatalog />
-                <ButtonApp />
+                <SizeCatalog selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
+                <ButtonApp setAppliedSize={setAppliedSize} selectedSize={selectedSize} />
                 <ButtonReset />
             </div>
             <ButtonShowDetails />
-            <ProductInfo />
+            <ProductInfo appliedSize={appliedSize} selectedSize={selectedSize} />
         </div>
     )
 }
