@@ -8,6 +8,7 @@
     }
 
     &__div {
+        // border-bottom: rem(1) solid var(--color-greyText);
         display: flex;
         flex-direction: column;
         row-gap: rem(40);
@@ -20,7 +21,8 @@
         }
 
         &__card {
-            border-block: rem(1) solid var(--color-greyText);
+            width: 100%;
+            border-top: rem(1) solid var(--color-greyText);
             padding-block: rem(30);
             display: flex;
             flex-direction: column;
